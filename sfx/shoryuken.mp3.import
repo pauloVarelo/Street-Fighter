@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/shoryuken.mp3-5988fe3ab2dc86ba924c42beaaf2d40e.mp3str"
+
+[deps]
+
+source_file="res://sfx/shoryuken.mp3"
+dest_files=[ "res://.import/shoryuken.mp3-5988fe3ab2dc86ba924c42beaaf2d40e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

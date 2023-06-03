@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/hadouken.mp3-f4e4e94120f22d92d6f0c63ddaa15266.mp3str"
+
+[deps]
+
+source_file="res://sfx/hadouken.mp3"
+dest_files=[ "res://.import/hadouken.mp3-f4e4e94120f22d92d6f0c63ddaa15266.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

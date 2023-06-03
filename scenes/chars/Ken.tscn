@@ -1,0 +1,142 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://sprites/spritesheet/Ken/6c72c964b4fa679b9c093846b8e3e871.png" type="Texture" id=1]
+[ext_resource path="res://sprites/spritesheet/Ken/ken.webp" type="Texture" id=2]
+[ext_resource path="res://scenes/chars/Ken.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 2, 258, 127, 129 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 129, 258, 127, 129 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 256, 258, 127, 129 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 383, 258, 127, 129 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 102, 126 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 102, 0, 102, 126 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 408, 0, 102, 126 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 714, 0, 102, 126 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 655, 94, 131 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 188, 655, 94, 131 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 564, 655, 94, 131 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 160, 70, 80 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 140, 160, 70, 80 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 70, 160, 70, 80 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 126, 102, 126 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 102, 126, 102, 126 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 816, 126, 102, 126 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 918, 126, 102, 126 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"loop": true,
+"name": "hadouken",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 29 ), SubResource( 32 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "jump",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 44 ), SubResource( 46 ), SubResource( 45 ) ],
+"loop": true,
+"name": "soco",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
+"loop": true,
+"name": "walking",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 90.5, 170.125 )
+
+[node name="Ken" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 600, 4.324 )
+scale = Vector2( 1.66176, 3.06863 )
+frames = SubResource( 23 )
+animation = "soco"
+playing = true
+
+[node name="Body" type="CollisionShape2D" parent="."]
+position = Vector2( 587.5, -5.875 )
+shape = SubResource( 24 )
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
